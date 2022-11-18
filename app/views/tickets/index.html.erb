@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<%= link_to "New ticket", new_ticket_path, class: 'btn btn-success' %>
+<h1>Tickets</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tickets.each do |ticket| %>
+      <%= render ticket %>
+    <% end %>
+  </tbody>
+</table>
